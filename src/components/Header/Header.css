@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    background: #f9f9f9;
+    color: #1a1a1a;
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+}
+
+.header-container {
+    padding: 1rem 2rem;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    height: fit-content;
+}
+
+.header-container span {
+    padding-left: 1rem;
+}

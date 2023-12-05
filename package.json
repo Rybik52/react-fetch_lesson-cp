@@ -1,6 +1,7 @@
 {
   "hostname": "https://rybik52.github.io/react-fetch_lesson-cp/",
   "name": "react-fetch-kt",
+  "homepage": "/react-fetch_lesson-cp/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

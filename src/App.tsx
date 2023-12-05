@@ -28,18 +28,23 @@ export interface ApiResponse {
 const App:FC = () =>  {
 const [data, setData] = useState<Product[]>([]);
 
-    useEffect(()=> {
+    useEffect(() => {
         fetch("https://dummyjson.com/products")
             .then((res) => {
                 if (!res.ok) {
-                    throw new Error("Не удалось запросить ресурс" + res.status)
+                    throw new Error("Не удалось запросить ресурс" + res.status);
                 }
-                return res.json() as ApiResponse
+                return res.json();
             })
-            .then((json)=> setData(json.products))
+            .then((json) => {
+                const apiResponse: ApiResponse = {
+                    products: json.products,
+                };
+                setData(apiResponse.products);
+            })
             .catch((error) => {
-                console.error("Fetch error:", error)
-            })
+                console.error("Fetch error:", error);
+            });
     }, []);
 
   return (
@@ -50,7 +55,6 @@ const [data, setData] = useState<Product[]>([]);
                 <Route path='/' element={<ProductsList data={data} />} />
                 <Route path="/product/:id" element={<ProductItem />} />
             </Routes>
-            {/*<ProductsList data={data} />*/}
         </main>
         <Footer />
     </>

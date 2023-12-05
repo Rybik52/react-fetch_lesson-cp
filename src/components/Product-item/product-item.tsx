@@ -20,7 +20,7 @@ const ProductItem:FC = () => {
                 console.error("Fetch error:", error)
             })
     }, [id])
-    console.log()
+
     return (
         <div className="item-page">
             {itemData ? (

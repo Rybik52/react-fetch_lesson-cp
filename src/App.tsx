@@ -52,7 +52,7 @@ const [data, setData] = useState<Product[]>([]);
         <Header />
         <main>
             <Routes>
-                <Route path='/' element={<ProductsList data={data} />} />
+                <Route path='/react-fetch_lesson-cp/' element={<ProductsList data={data} />} />
                 <Route path="/product/:id" element={<ProductItem />} />
             </Routes>
         </main>

@@ -1,7 +1,8 @@
 import {FC, useEffect, useState} from 'react';
 import {Product} from "../../App";
-import Rating from "../Products-list/Rating";
+import Rating from "../../components/Products-list/Rating";
 import {useParams} from "react-router-dom";
+import "./product-item.css";
 
 const ProductItem:FC = () => {
     const [itemData, setItemData] = useState<Product | undefined>(undefined)

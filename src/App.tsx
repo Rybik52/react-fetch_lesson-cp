@@ -3,7 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import ProductsList from "./components/Products-list/products-list";
-import ProductItem from "./components/Product-item/product-item";
+import ProductItem from "./pages/Product-item/product-item";
+import NotFound from "./pages/NotFound";
 
 
 export interface Product {
@@ -52,8 +53,9 @@ const [data, setData] = useState<Product[]>([]);
         <Header />
         <main>
             <Routes>
-                <Route path='/' element={<ProductsList data={data} />} />
+                <Route path="/" element={<ProductsList data={data} />} />
                 <Route path="/product/:id" element={<ProductItem />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </main>
         <Footer />
